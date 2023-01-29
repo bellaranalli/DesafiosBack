@@ -1,0 +1,1 @@
+[{"name":"Bota","description":"caña alta","price":"250","thumbnail":"aca va una imagen","code":43,"id":2,"stock":4},{"name":"Zapatilla","description":"running","price":"100","thumbnail":"aca va una imagen","code":86,"id":3,"stock":4}]
