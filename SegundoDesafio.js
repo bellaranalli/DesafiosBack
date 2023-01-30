@@ -11,7 +11,7 @@ class ProductManager {
         }
         else {
 
-            this.products.push({ name: title, description: description, price: price, thumbnail: thumbnail, code: code, id: producto.length + 1, stock: stock });
+            this.products.push({ name: title, description: description, price: price, thumbnail: thumbnail, code: code, id: this.products.length + 1, stock: stock });
             fs.writeFileSync("./Productos.txt", JSON.stringify(this.products))
         }
     }
@@ -55,25 +55,17 @@ class ProductManager {
         fs.writeFileSync("./Productos.txt", JSON.stringify(producto))
     }
 
-
 }
 let Product_Manager = new ProductManager([]);
 
 
-console.log(Product_Manager.getProductById(3)); //llamo por id a un producto y si no existe lo muestro por consola al mensaje
-Product_Manager.deleteProductById(1) //borro producto con id 1
-Product_Manager.updateProductById(2) //modifico dato de producto por id 2
+//Product_Manager.getProductById(1); //llamo por id a un producto y si no existe lo muestro por consola al mensaje
+//Product_Manager.deleteProductById(1) //borro producto con id 1
+//Product_Manager.updateProductById(2) //modifico dato de producto por id 2
 
-if (fs.existsSync("./Productos.txt")) {
-    let archivo = fs.readFileSync("./Productos.txt", "utf-8")
-    let contenido = JSON.parse(archivo)
-    console.log(contenido)
-}
+//Esto de abajo es en caso de que quiera agregar un producto: 
 
-/*Esto de abajo es en caso de que quiera agregar un producto:
+//Product_Manager.addproduct("Zapato", "Cuero", "$100", "aca va una imagen", 90, 4);
+//Product_Manager.addproduct("Bota", "caña alta", "$100", "aca va una imagen", 43, 4);
+//Product_Manager.addproduct("Zapatilla", "running", "100", "aca va una imagen", 86, 4 );
 
-Product_Manager.addproduct("Zapato", "Cuero", "$100", "aca va una imagen", 90, 4);
-Product_Manager.addproduct("Bota", "caña alta", "$100", "aca va una imagen", 43, 4);
-Product_Manager.addproduct("Zapatilla", "running", "100", "aca va una imagen", 86, 4 );
-
-*/
